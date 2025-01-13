@@ -35,15 +35,15 @@ public class UploadResource {
 
     @POST
     @Consumes(MediaType.MULTIPART_FORM_DATA)
-    public Response upload(final MultipartFormDataInput parts) {
+    public TemplateInstance upload(final MultipartFormDataInput parts) {
         try {
             final File fileToSave = new File("test.xlsx");
             FormValue file = parts.getValues().get("file").iterator().next();
             Files.copy(file.getFileItem().getFile(), fileToSave.toPath(), StandardCopyOption.REPLACE_EXISTING);
-            return Response.ok("test").build();
+            //return Response.ok("test").build();
         } catch (final IOException e) {
             log.error("Error while uploading file", e);
         }
-        return Response.serverError().build();
+      return testpage.instance();
     }
 }
