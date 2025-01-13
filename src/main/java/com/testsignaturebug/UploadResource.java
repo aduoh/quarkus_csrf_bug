@@ -23,7 +23,7 @@ import org.jboss.resteasy.reactive.server.multipart.MultipartFormDataInput;
 public class UploadResource {
     private final Template testpage;
 
-    public FileResource(final Template testpage) {
+    public UploadResource(final Template testpage) {
         this.testpage = testpage;
     }
 
