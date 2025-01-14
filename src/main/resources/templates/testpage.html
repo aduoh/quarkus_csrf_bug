@@ -7,9 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Upload Files</title>
 </head>
-<body hx-headers='{"{inject:csrf.headerName}":"{inject:csrf.token}"}'>
+<body>
 <main>
     <form action="/test" method="post" enctype="multipart/form-data">
+        <input type="hidden" name='{"{inject:csrf.headerName}"}' value='{"{inject:csrf.token}"}'>
         <div>
             <input type="file" name="file">
         </div>
